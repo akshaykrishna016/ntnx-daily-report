@@ -1,0 +1,8 @@
+# Runtime dependencies for ntnx-daily-report (Python 3.9+).
+# Deliberately minimal and air-gap friendly (design document, section 2).
+# Everything else used by the project is in the Python standard library
+# (smtplib, email, csv, logging, argparse, json, concurrent.futures).
+requests>=2.25,<3
+jinja2>=3.0,<4
+matplotlib>=3.5,<4
+pyyaml>=5.4,<7

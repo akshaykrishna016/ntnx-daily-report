@@ -1,0 +1,199 @@
+{#
+  Self-contained daily report template (design document, section 7a).
+
+  Derived from report_mockup_v3.html. Differences from the mockup, all required
+  by the spec:
+    * The three capacity gauges and the two Top-Talker bar charts are matplotlib
+      PNGs embedded as base64 data URIs (section 6), not inline SVG / HTML divs.
+    * The Siemens / Nutanix logos are embedded as base64 data URIs, and each
+      <img> is omitted entirely when its PNG is absent (section 7a).
+    * No external references of any kind (no CDN font link).
+  Everything else — palette, layout, table columns, footnotes — matches the
+  approved mockup.
+#}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Siemens Ltd — Nutanix Daily Infrastructure Report</title>
+<style>
+  :root {
+    --nx-ink:       #131313;
+    --nx-purple:    #7855FA;
+    --nx-deep:      #4B00AA;
+    --nx-gray:      #5D5D5D;
+    --nx-cyan:      #1FDDE9;
+    --nx-lime:      #92DD23;
+    --nx-coral:     #FF9178;
+    --nx-teal:      #0092B0;
+    --nx-purple-dk: #391699;
+    --rag-green:    #2E9E4F;
+    --rag-amber:    #E8A13D;
+    --rag-red:      #D0342C;
+    --ink-soft:     #6B7480;
+    --line:         #E1E5EA;
+    --row-alt:      #F6F5FA;
+    --band:         #F1EDFE;
+  }
+  body { margin:0; padding:24px 0; background:#ECEDF1; font-family:'Montserrat', Arial, Helvetica, sans-serif; color:var(--nx-ink); }
+  .page { width:900px; margin:0 auto; background:#fff; box-shadow:0 2px 12px rgba(0,0,0,.12); }
+
+  .logostrip { display:flex; justify-content:space-between; align-items:center; padding:14px 32px; background:#fff; min-height:28px; }
+  .logostrip img { height:28px; }
+  .hdr { background:var(--nx-ink); color:#fff; padding:18px 32px 20px; }
+  .hdr h1 { margin:0 0 2px; font-size:20px; font-weight:300; letter-spacing:.3px; }
+  .hdr .meta { color:#A9A9B2; font-size:11.5px; margin-top:8px; line-height:1.6; }
+  .hdr .meta b { color:#E8E8EC; font-weight:400; }
+  .xbar { height:4px; background:linear-gradient(90deg, var(--nx-purple), var(--nx-cyan), var(--nx-lime), var(--nx-coral)); }
+
+  .section { padding:22px 32px; }
+  .section h2 { font-size:14px; color:var(--nx-ink); border-bottom:3px solid var(--nx-purple); padding-bottom:6px; margin:0 0 16px; text-transform:uppercase; letter-spacing:1.5px; font-weight:600; }
+  .section h3 { font-size:12.5px; color:var(--nx-gray); margin:20px 0 8px; font-weight:600; }
+  .subnote { font-size:10.5px; color:var(--ink-soft); margin:4px 0 0; }
+
+  .kpis { display:flex; gap:12px; margin-bottom:4px; }
+  .kpi { flex:1; border:1px solid var(--line); border-top:3px solid var(--nx-purple); padding:10px 12px; }
+  .kpi .v { font-size:22px; font-weight:700; color:var(--nx-ink); }
+  .kpi .l { font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-top:2px; }
+
+  .gauges { display:flex; justify-content:space-between; gap:16px; }
+  .gauge { flex:1; text-align:center; border:1px solid var(--line); padding:16px 8px 12px; }
+  .gauge .title { font-size:11px; font-weight:600; color:var(--nx-gray); text-transform:uppercase; letter-spacing:1px; margin-bottom:8px; }
+  .gauge img { width:140px; height:140px; }
+  .gauge .detail { font-size:10.5px; color:var(--ink-soft); margin-top:6px; }
+
+  .eff { display:flex; gap:12px; }
+  .tile { flex:1; text-align:center; padding:14px 8px; color:#fff; }
+  .tile .n { font-size:26px; font-weight:700; }
+  .tile .t { font-size:10px; text-transform:uppercase; letter-spacing:.8px; margin-top:4px; opacity:.95; }
+  .tile .d { font-size:9.5px; margin-top:4px; opacity:.8; }
+  .tile.light { color:var(--nx-ink); }
+  .tile.light .t, .tile.light .d { opacity:.85; }
+
+  .cols2 { display:flex; gap:28px; }
+  .cols2 > div { flex:1; min-width:0; }
+  .cols2 img { width:100%; height:auto; }
+
+  table.data { width:100%; border-collapse:collapse; font-size:10px; table-layout:fixed; }
+  table.data th { background:var(--nx-ink); color:#fff; padding:6px 5px; text-align:right; font-weight:400; line-height:1.25; vertical-align:bottom; }
+  table.data th:first-child { text-align:left; }
+  table.data td { padding:5px; border-bottom:1px solid var(--line); text-align:right; }
+  table.data td:first-child { text-align:left; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  table.data tr:nth-child(even) td { background:var(--row-alt); }
+  table.data col.name { width:17%; }
+  .rag-g { background:var(--rag-green) !important; color:#fff; font-weight:700; }
+  .rag-a { background:var(--rag-amber) !important; color:#fff; font-weight:700; }
+  .rag-r { background:var(--rag-red) !important; color:#fff; font-weight:700; }
+  .clusterband td { background:var(--band) !important; color:var(--nx-deep); font-weight:600; }
+
+  .legend { font-size:10px; color:var(--ink-soft); margin-top:8px; }
+  .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin:0 4px 0 10px; vertical-align:middle; }
+
+  .ftr { background:#F4F4F7; border-top:1px solid var(--line); padding:14px 32px; font-size:9.5px; color:var(--ink-soft); line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ============ LOGO STRIP + HEADER ============ -->
+  <div class="logostrip">
+    {% if logos.siemens %}<img src="{{ logos.siemens }}" alt="Siemens">{% else %}<span></span>{% endif %}
+    {% if logos.nutanix %}<img src="{{ logos.nutanix }}" alt="Nutanix">{% else %}<span></span>{% endif %}
+  </div>
+  <div class="xbar"></div>
+  <div class="hdr">
+    <h1>{{ title }}</h1>
+    <div class="meta">
+      Report date: <b>{{ meta.date_long }}</b> &nbsp;|&nbsp; Reporting period: <b>{{ meta.window_desc }}</b><br>
+      Source: <b>Prism Central {{ meta.pc_host }}</b> &nbsp;|&nbsp; Clusters: <b>{{ cluster_rows|length }}</b> &nbsp;|&nbsp; Hosts: <b>{{ host_groups|map(attribute='host_count')|sum }}</b> &nbsp;|&nbsp; VMs: <b>{{ vm_total }}</b>
+    </div>
+  </div>
+
+  <!-- ============ EXECUTIVE DASHBOARD ============ -->
+  <div class="section">
+    <h2>Executive Dashboard</h2>
+
+    <div class="kpis">
+      {% for kpi in kpis %}
+      <div class="kpi"><div class="v"{% if kpi.color %} style="color:{{ kpi.color }};"{% endif %}>{{ kpi.value }}</div><div class="l">{{ kpi.label }}</div></div>
+      {% endfor %}
+    </div>
+
+    <h3>Overall Capacity vs. Consumed (all clusters)</h3>
+    <div class="gauges">
+      {% for gauge in gauges %}
+      <div class="gauge">
+        <div class="title">{{ gauge.title }}</div>
+        <img src="{{ gauge.img }}" alt="{{ gauge.title }} gauge">
+        <div class="detail">{{ gauge.detail }}</div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="legend">Thresholds: <span class="dot" style="background:var(--rag-green);"></span>&lt;{{ thresholds.amber }}% <span class="dot" style="background:var(--rag-amber);"></span>{{ thresholds.amber }}–{{ thresholds.red }}% <span class="dot" style="background:var(--rag-red);"></span>&gt;{{ thresholds.red }}%</div>
+
+    <h3>VM Efficiency Snapshot <span style="font-weight:400;color:var(--ink-soft);">(Prism Central X-FIT analysis)</span></h3>
+    <div class="eff">
+      {% for tile in tiles %}
+      <div class="tile{% if tile.light %} light{% endif %}" style="background:{{ tile.bg }};"><div class="n">{{ tile.n }}</div><div class="t">{{ tile.t }}</div><div class="d">{{ tile.d }}</div></div>
+      {% endfor %}
+    </div>
+    {% if eff_footnote %}<p class="subnote">{{ eff_footnote }}</p>{% endif %}
+
+    <h3>Top Talkers (24h average)</h3>
+    <div class="cols2">
+      <div>
+        <h3 style="margin-top:4px;">Top {{ top_n }} VMs — CPU Usage</h3>
+        <img src="{{ cpu_bar }}" alt="Top VMs by CPU">
+      </div>
+      <div>
+        <h3 style="margin-top:4px;">Top {{ top_n }} VMs — Memory Usage</h3>
+        <img src="{{ mem_bar }}" alt="Top VMs by Memory">
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ DEEP DIVE ============ -->
+  <div class="section" style="padding-top:8px;">
+    <h2>Deep Dive — Data Tables</h2>
+
+    <h3>A. Cluster Level View</h3>
+    <table class="data">
+      <col class="name"><col><col><col><col><col><col><col><col><col>
+      <tr><th>Name</th><th>Total CPU (GHz)</th><th>CPU %</th><th>CPU MAX</th><th>Mem (GiB)</th><th>Mem Used</th><th>Mem MAX</th><th>Storage</th><th>Used</th><th>Free</th></tr>
+      {% for row in cluster_rows %}
+      <tr><td>{{ row.name }}</td><td>{{ row.cpu_ghz }}</td><td class="{{ row.cpu_pct_rag }}">{{ row.cpu_pct }}{% if row.cpu_pct_rag %}%{% endif %}</td><td class="{{ row.cpu_max_rag }}">{{ row.cpu_max }}{% if row.cpu_max_rag %}%{% endif %}</td><td>{{ row.mem }}</td><td>{{ row.mem_used }}</td><td>{{ row.mem_max }}</td><td>{{ row.storage }}</td><td>{{ row.used }}</td><td>{{ row.free }}</td></tr>
+      {% endfor %}
+    </table>
+
+    <h3>B. Host Level View <span style="font-weight:400;color:var(--ink-soft);">(grouped by cluster)</span></h3>
+    <table class="data">
+      <col class="name"><col><col><col><col><col><col><col><col><col>
+      <tr><th>Name</th><th>Total CPU (GHz)</th><th>CPU %</th><th>CPU MAX</th><th>Mem (GiB)</th><th>Mem Used</th><th>Mem MAX</th><th>Storage</th><th>Used</th><th>Free</th></tr>
+      {% for group in host_groups %}
+      <tr class="clusterband"><td colspan="10">{{ group.cluster_name }} — {{ group.host_count }} hosts</td></tr>
+      {% for row in group.rows %}
+      <tr><td>{{ row.name }}{% if row.ip %} ({{ row.ip }}){% endif %}</td><td>{{ row.cpu_ghz }}</td><td class="{{ row.cpu_pct_rag }}">{{ row.cpu_pct }}{% if row.cpu_pct_rag %}%{% endif %}</td><td class="{{ row.cpu_max_rag }}">{{ row.cpu_max }}{% if row.cpu_max_rag %}%{% endif %}</td><td>{{ row.mem }}</td><td>{{ row.mem_used }}</td><td>{{ row.mem_max }}</td><td>{{ row.storage }}</td><td>{{ row.used }}</td><td>{{ row.free }}</td></tr>
+      {% endfor %}
+      {% endfor %}
+    </table>
+
+    <h3>C. Virtual Machine Level View <span style="font-weight:400;color:var(--ink-soft);">(sorted by CPU MAX — showing {{ vm_shown }} of {{ vm_total }}; full inventory attached as CSV)</span></h3>
+    <table class="data">
+      <col class="name"><col style="width:6%"><col><col><col><col><col><col><col><col style="width:6%">
+      <tr><th>VM Name</th><th>vCPU</th><th>CPU MAX</th><th>Mem (GiB)</th><th>Mem Used</th><th>Mem MAX</th><th>Storage</th><th>Used *</th><th>Free *</th><th>Disks</th></tr>
+      {% for row in vm_rows %}
+      <tr><td>{{ row.name }}</td><td>{{ row.vcpu }}</td><td class="{{ row.cpu_max_rag }}">{{ row.cpu_max }}{% if row.cpu_max_rag %}%{% endif %}</td><td>{{ row.mem }}</td><td>{{ row.mem_used }}</td><td>{{ row.mem_max }}</td><td>{{ row.storage }}</td><td>{{ row.guest_used }}</td><td>{{ row.guest_free }}</td><td>{{ row.disks }}</td></tr>
+      {% endfor %}
+    </table>
+    <p class="subnote">* Guest-level storage requires Nutanix Guest Tools (NGT); VMs without NGT show "—" (hypervisor-allocated capacity still reported in Storage).{% if vm_stats_failures %} {{ vm_stats_failures }} VM(s) could not be fully collected (stats unavailable); shown with "—".{% endif %}</p>
+  </div>
+
+  <!-- ============ FOOTER ============ -->
+  <div class="xbar"></div>
+  <div class="ftr">
+    Generated automatically at {{ meta.generated }} by <b>ntnx-daily-report v1.1</b> on {{ meta.gen_host }} · Data source: Prism Central REST API (v4) · Reporting period: trailing {{ meta.window_hours }} h, peaks from 5-minute samples.<br>
+    Distribution: {{ meta.contact }} · For questions or threshold changes contact the {{ footer_contact }}.
+  </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,18 @@
+# Local secrets — never commit
+.env
+
+# Generated output and logs
+out/
+logs/
+*.log
+
+# Build artifacts
+build/
+dist/
+*.spec.bak
+.venv/
+venv/
+
+# Python caches
+__pycache__/
+*.pyc

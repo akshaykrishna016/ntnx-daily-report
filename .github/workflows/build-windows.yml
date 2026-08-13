@@ -1,0 +1,43 @@
+# Builds the Windows .exe on a GitHub-hosted Windows runner and uploads it as a
+# downloadable artifact — useful when you don't have a Windows machine handy.
+#
+# Trigger it manually from the repo's Actions tab (Run workflow), or on a tag.
+name: build-windows-exe
+
+on:
+  workflow_dispatch:      # manual "Run workflow" button
+  push:
+    branches:             # build automatically on every push to these branches
+      - main
+      - master
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - name: Check out the code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies + PyInstaller
+        run: pip install -r requirements.txt pyinstaller
+
+      - name: Build the executable
+        run: pyinstaller --clean --noconfirm ntnx-daily-report.spec
+
+      - name: Stage config beside the exe
+        run: copy config.yaml dist\config.yaml
+
+      - name: Upload the exe as an artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ntnx-daily-report-windows
+          path: |
+            dist/ntnx-daily-report.exe
+            dist/config.yaml

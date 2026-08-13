@@ -1,0 +1,52 @@
+# ---------------------------------------------------------------------------
+# ntnx-daily-report configuration (no secrets in this file).
+#
+# TWO WAYS TO RUN:
+#  1. Scheduled / unattended (cron): fill in prism_central and smtp below, and
+#     provide secrets via env vars / .env (PC_PASSWORD, SMTP_PASSWORD).
+#  2. Ad-hoc / run-it-once locally: LEAVE prism_central.host (and smtp) blank.
+#     The script will interactively prompt you for the PC IP/FQDN and password,
+#     then ask whether to email the report or just generate the files locally.
+#
+# Secrets never live in this file. When set, env vars win over any prompt:
+#   PC_PASSWORD    -- Prism Central service-account password.
+#   SMTP_PASSWORD  -- mail relay password (only if smtp.username is set).
+# ---------------------------------------------------------------------------
+
+prism_central:
+  host:                      # blank -> you will be prompted for the PC IP/FQDN
+  port: 9440
+  username:                  # blank -> prompted (default: svc_report_ro)
+  verify_ssl: false          # true | false | /path/to/ca.pem
+
+report:
+  window_hours: 24
+  timezone: Asia/Kolkata
+  time_buffer_seconds: 120   # shift stats end-time this far into the past to
+                             # absorb client/server clock skew (avoids CLU-10006)
+  stats_workers: 4           # concurrent VM stats calls; keep well under the PC
+                             # rate limit (30 req/s on smallest PC) to avoid 429
+  top_n_vms: 10              # number of bars in the Top Talkers charts
+  vm_table_rows: 25          # VM rows shown inline; full list goes to the CSV
+  thresholds:
+    amber: 70               # >= amber and <= red -> amber; < amber -> green
+    red: 85                 # > red -> red
+  exclude_vm_patterns:
+    - "NTNX-*-CVM"
+
+smtp:
+  # Leave host blank for ad-hoc runs: you'll be asked whether to email the
+  # report, and if so, prompted for these details. Fill them in for cron.
+  host:                      # blank -> prompted (or skip email entirely)
+  port: 25
+  mode: plain                # plain (25) | starttls (587) | ssl (465)
+  username: null             # null -> anonymous relay (no login attempted)
+  from:                      # e.g. "Nutanix Reports <ntnx-reports@siemens.com>"
+  recipients: []             # e.g. ["PDL-Siemens-Infra@siemens.com"]
+  cc: []
+  reply_to: null
+
+branding:
+  assets_dir: ./assets
+  title: "Nutanix Infrastructure — Daily Resource & Capacity Report"
+  footer_contact: "Infrastructure Automation team"
