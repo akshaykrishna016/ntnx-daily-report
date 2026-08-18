@@ -94,10 +94,12 @@ def _exclude_patterns(config):
 def _is_excluded(raw, exclude_patterns):
     """Decide whether a raw VM should be excluded from all VM views.
 
-    Excludes Controller VMs (``isCvm``), the Prism Central VM (``isAgentVm``
-    used here as the PC marker), and any VM whose name matches a configured
-    exclusion glob (e.g. ``NTNX-*-CVM``).
+    Excludes the Prism Central VM (v4 marks it with ``machineType == "PC"``),
+    Controller VMs / agent VMs where those flags exist, and any VM whose name
+    matches a configured exclusion glob (e.g. ``NTNX-*-CVM``).
     """
+    if raw.get("machineType") == "PC":
+        return True
     if raw.get("isCvm"):
         return True
     if raw.get("isAgentVm"):
@@ -172,9 +174,11 @@ def _build_vm(raw, cluster_name, stats_by_ext_id, guest_map, eff_map):
 
     disks = raw.get("disks") or []
     disk_count = len(disks)
-    storage_total_bytes = sum(
-        (disk.get("diskSizeBytes") or 0) for disk in disks
-    )
+    # v4 nests the disk size under backingInfo: disks[].backingInfo.diskSizeBytes.
+    storage_total_bytes = 0
+    for disk in disks:
+        backing = disk.get("backingInfo") or {}
+        storage_total_bytes += backing.get("diskSizeBytes") or 0
 
     power_state = raw.get("powerState") or "UNKNOWN"
 

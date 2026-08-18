@@ -20,8 +20,10 @@ CLUSTER_STORAGE_CAPACITY_BYTES = "storageCapacityBytes"
 CLUSTER_STORAGE_USAGE_BYTES = "storageUsageBytes"
 
 # ---- Host stats (GET .../stats/clusters/{cid}/hosts/{hid}) ------------------
+# NOTE: host stats do NOT expose "hypervisorMemoryUsagePpm"; the aggregate
+# hypervisor memory usage is the correct key (confirmed against the live PC).
 HOST_CPU_USAGE_PPM = "hypervisorCpuUsagePpm"
-HOST_MEM_USAGE_PPM = "hypervisorMemoryUsagePpm"
+HOST_MEM_USAGE_PPM = "aggregateHypervisorMemoryUsagePpm"
 HOST_STORAGE_CAPACITY_BYTES = "storageCapacityBytes"
 HOST_STORAGE_USAGE_BYTES = "storageUsageBytes"
 
@@ -53,18 +55,11 @@ def _select(*attributes):
     return ",".join("stats/" + attribute for attribute in attributes)
 
 
-CLUSTER_STATS_SELECT = _select(
-    CLUSTER_CPU_USAGE_PPM,
-    CLUSTER_MEM_USAGE_PPM,
-    CLUSTER_STORAGE_CAPACITY_BYTES,
-    CLUSTER_STORAGE_USAGE_BYTES,
-)
-HOST_STATS_SELECT = _select(
-    HOST_CPU_USAGE_PPM,
-    HOST_MEM_USAGE_PPM,
-    HOST_STORAGE_CAPACITY_BYTES,
-    HOST_STORAGE_USAGE_BYTES,
-)
+# IMPORTANT: only the VMM (VM) stats endpoint accepts (and requires) a $select,
+# and its attributes MUST carry the 'stats/' prefix. The clustermgmt stats
+# endpoints (cluster / host) REJECT a 'stats/'-prefixed $select with error
+# CLU-10007 ("select property not found"), and return the full metric set with
+# no $select at all — so the collectors send $select for VMs only.
 VM_STATS_SELECT = _select(
     VM_CPU_USAGE_PPM,
     VM_MEM_USAGE_PPM,

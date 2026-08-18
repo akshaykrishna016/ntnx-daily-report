@@ -127,8 +127,9 @@ def build_cluster(client, raw, hosts, window):
         cid=cluster_ext_id
     )
     stats_ok = False
+    # clustermgmt stats reject a 'stats/'-prefixed $select (CLU-10007); omitting
+    # it returns the full metric set, which is what we parse.
     params = dict(window.get("params") or {})
-    params["$select"] = metric_names.CLUSTER_STATS_SELECT
     try:
         payload = client.get_json(stats_path, params=params)
 

@@ -44,42 +44,84 @@ def extract_samples(stats_payload, metric_name):
     data = stats_payload.get("data")
     if data is None:
         return []
-    # Normalize ``data`` to a list of sample objects.
-    if isinstance(data, dict):
-        samples = [data]
-    else:
-        samples = data
 
+    # VMM shape (VM stats): metrics are scalars inside ``data.stats[]``.
+    if isinstance(data, dict) and isinstance(data.get("stats"), list):
+        values = []
+        for tuple_entry in data["stats"]:
+            if isinstance(tuple_entry, dict):
+                value = tuple_entry.get(metric_name)
+                if value is not None:
+                    values.append(value)
+        return values
+
+    # clustermgmt shape (cluster / host stats): the metric is its own array of
+    # ``{timestamp, value}`` points directly under ``data``.
+    if isinstance(data, dict):
+        return _pair_values(data.get(metric_name))
+
+    # Legacy list shape: ``data`` is a list of sample objects.
+    if isinstance(data, list):
+        values = []
+        for sample in data:
+            if not isinstance(sample, dict):
+                continue
+            raw = sample.get(metric_name)
+            if raw is None:
+                continue
+            if isinstance(raw, list):
+                values.extend(_pair_values(raw))
+            else:
+                values.append(raw)
+        return values
+
+    return []
+
+
+def _pair_values(array):
+    """Return the numeric values from a list of ``{timestamp, value}`` points.
+
+    Accepts dict points (``{"value": n}``) or bare numbers.
+    """
+    if not isinstance(array, list):
+        return []
     values = []
-    for sample in samples:
-        if not isinstance(sample, dict):
-            continue
-        raw = sample.get(metric_name)
-        if raw is None:
-            continue
-        if isinstance(raw, list):
-            # Alternative shape: metric holds a list of {"value": n} points.
-            for point in raw:
-                if isinstance(point, dict) and point.get("value") is not None:
-                    values.append(point["value"])
-                elif not isinstance(point, dict) and point is not None:
-                    values.append(point)
-        else:
-            # Standard shape: metric is a scalar on this sample.
-            values.append(raw)
+    for point in array:
+        if isinstance(point, dict):
+            if point.get("value") is not None:
+                values.append(point["value"])
+        elif point is not None:
+            values.append(point)
     return values
 
 
 def latest_sample(stats_payload, metric_name):
     """Return the most recent value for a metric (used for storage counters).
 
+    For the clustermgmt shape the metric is an array of ``{timestamp, value}``
+    points that can arrive newest-first, so the value with the greatest
+    timestamp is chosen. Falls back to the last value in the series when there
+    are no timestamps (e.g. the VMM shape or the fixtures).
+
     Args:
         stats_payload: A v4 stats payload.
         metric_name: The metric key to read.
 
     Returns:
-        The last numeric value in the series, or ``None`` when absent.
+        The most recent numeric value, or ``None`` when absent.
     """
+    data = stats_payload.get("data")
+    if isinstance(data, dict):
+        array = data.get(metric_name)
+        if (
+            isinstance(array, list)
+            and array
+            and isinstance(array[0], dict)
+            and "timestamp" in array[0]
+        ):
+            newest = max(array, key=lambda point: point.get("timestamp") or "")
+            return newest.get("value")
+
     values = extract_samples(stats_payload, metric_name)
     if not values:
         return None

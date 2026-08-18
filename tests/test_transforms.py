@@ -181,43 +181,65 @@ class TestEfficiencyNormalization(unittest.TestCase):
 
 
 class TestStatsParsing(unittest.TestCase):
-    """Tests for parsing the real v4 stats response shape."""
+    """Tests for parsing the two real v4 stats response shapes."""
 
-    def _payload(self):
-        # data = list of per-timestamp sample objects with scalar metrics.
+    def _vmm_payload(self):
+        # VMM shape: data.stats[] with scalar metrics per tuple (no timestamp).
         return {
-            "data": [
-                {"timestamp": "t0", "hypervisorCpuUsagePpm": 600000,
-                 "storageUsageBytes": 100},
-                {"timestamp": "t1", "hypervisorCpuUsagePpm": 910000,
-                 "storageUsageBytes": 200},
-                {"timestamp": "t2", "hypervisorCpuUsagePpm": 700000,
-                 "storageUsageBytes": 300},
-            ]
+            "data": {
+                "$objectType": "vmm.v4.ahv.stats.VmStats",
+                "stats": [
+                    {"hypervisorCpuUsagePpm": 47777, "memoryUsagePpm": 563988},
+                    {"hypervisorCpuUsagePpm": 82500, "memoryUsagePpm": 564118},
+                    {"hypervisorCpuUsagePpm": 70464, "memoryUsagePpm": 564218},
+                ],
+            }
         }
 
-    def test_extract_scalar_series(self):
-        samples = extract_samples(self._payload(), "hypervisorCpuUsagePpm")
-        self.assertEqual(samples, [600000, 910000, 700000])
+    def _clustermgmt_payload(self):
+        # clustermgmt shape: each metric is its own array of {timestamp, value},
+        # newest-first (as the live PC returns them).
+        return {
+            "data": {
+                "hypervisorCpuUsagePpm": [
+                    {"timestamp": "2026-08-14T07:05:00Z", "value": 700000},
+                    {"timestamp": "2026-08-14T07:00:00Z", "value": 600000},
+                    {"timestamp": "2026-08-14T06:55:00Z", "value": 910000},
+                ],
+                "storageUsageBytes": [
+                    {"timestamp": "2026-08-14T07:05:00Z", "value": 300},
+                    {"timestamp": "2026-08-14T07:00:00Z", "value": 200},
+                ],
+            }
+        }
 
-    def test_latest_sample(self):
+    def test_vmm_scalar_series(self):
+        samples = extract_samples(self._vmm_payload(), "hypervisorCpuUsagePpm")
+        self.assertEqual(samples, [47777, 82500, 70464])
+
+    def test_clustermgmt_series(self):
+        samples = extract_samples(
+            self._clustermgmt_payload(), "hypervisorCpuUsagePpm"
+        )
+        self.assertEqual(samples, [700000, 600000, 910000])
+
+    def test_latest_sample_picks_newest_timestamp(self):
+        # Even though the array is newest-first, latest must be by max timestamp.
         self.assertEqual(
-            latest_sample(self._payload(), "storageUsageBytes"), 300
+            latest_sample(self._clustermgmt_payload(), "storageUsageBytes"), 300
         )
 
     def test_missing_metric_empty(self):
-        self.assertEqual(extract_samples(self._payload(), "notThere"), [])
+        self.assertEqual(
+            extract_samples(self._vmm_payload(), "notThere"), []
+        )
+        self.assertEqual(
+            extract_samples(self._clustermgmt_payload(), "notThere"), []
+        )
 
     def test_empty_payload(self):
         self.assertEqual(extract_samples({}, "x"), [])
         self.assertEqual(extract_samples({"data": None}, "x"), [])
-
-    def test_single_object_data(self):
-        # Tolerate a single object instead of a list.
-        payload = {"data": {"hypervisorCpuUsagePpm": 500000}}
-        self.assertEqual(
-            extract_samples(payload, "hypervisorCpuUsagePpm"), [500000]
-        )
 
 
 class TestCsvRow(unittest.TestCase):
