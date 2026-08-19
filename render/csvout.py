@@ -24,8 +24,8 @@ CSV_HEADER = [
     "Mem Used (GiB)",
     "Mem MAX (GiB)",
     "Storage",
-    "Guest Used",
-    "Guest Free",
+    "Storage Used",
+    "Storage Free",
     "Disks",
     "Efficiency",
 ]

@@ -3320,51 +3320,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 800000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 840000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 900000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 860000,
-          "memoryUsagePpm": 900000
+          "memoryUsagePpm": 900000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 930000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 820000,
-          "memoryUsagePpm": 860000
+          "memoryUsagePpm": 860000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 910000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 870000,
-          "memoryUsagePpm": 910000
+          "memoryUsagePpm": 910000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 920000,
-          "memoryUsagePpm": 960000
+          "memoryUsagePpm": 960000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 850000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 890000,
-          "memoryUsagePpm": 930000
+          "memoryUsagePpm": 930000,
+          "controllerUserBytes": 1099511627776
         },
         {
           "hypervisorCpuUsagePpm": 970000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 1099511627776
         }
       ]
     },
@@ -3372,51 +3384,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 760000,
-          "memoryUsagePpm": 910000
+          "memoryUsagePpm": 910000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 800000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 860000,
-          "memoryUsagePpm": 1010000
+          "memoryUsagePpm": 1010000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 820000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 890000,
-          "memoryUsagePpm": 1040000
+          "memoryUsagePpm": 1040000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 780000,
-          "memoryUsagePpm": 930000
+          "memoryUsagePpm": 930000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 870000,
-          "memoryUsagePpm": 1020000
+          "memoryUsagePpm": 1020000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 830000,
-          "memoryUsagePpm": 980000
+          "memoryUsagePpm": 980000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 880000,
-          "memoryUsagePpm": 1030000
+          "memoryUsagePpm": 1030000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 810000,
-          "memoryUsagePpm": 960000
+          "memoryUsagePpm": 960000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 850000,
-          "memoryUsagePpm": 1000000
+          "memoryUsagePpm": 1000000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 930000,
-          "memoryUsagePpm": 1000000
+          "memoryUsagePpm": 1000000,
+          "controllerUserBytes": 2638827906662
         }
       ]
     },
@@ -3424,51 +3448,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 710000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 750000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 810000,
-          "memoryUsagePpm": 860000
+          "memoryUsagePpm": 860000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 770000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 840000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 730000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 820000,
-          "memoryUsagePpm": 870000
+          "memoryUsagePpm": 870000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 780000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 830000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 760000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 800000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 375809638400
         },
         {
           "hypervisorCpuUsagePpm": 900000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 375809638400
         }
       ]
     },
@@ -3476,51 +3512,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 670000,
-          "memoryUsagePpm": 920000
+          "memoryUsagePpm": 920000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 730000,
-          "memoryUsagePpm": 980000
+          "memoryUsagePpm": 980000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 690000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 760000,
-          "memoryUsagePpm": 1010000
+          "memoryUsagePpm": 1010000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 900000
+          "memoryUsagePpm": 900000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 740000,
-          "memoryUsagePpm": 990000
+          "memoryUsagePpm": 990000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 700000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 750000,
-          "memoryUsagePpm": 1000000
+          "memoryUsagePpm": 1000000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 680000,
-          "memoryUsagePpm": 930000
+          "memoryUsagePpm": 930000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 720000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 7036874417766
         },
         {
           "hypervisorCpuUsagePpm": 840000,
-          "memoryUsagePpm": 980000
+          "memoryUsagePpm": 980000,
+          "controllerUserBytes": 7036874417766
         }
       ]
     },
@@ -3528,51 +3576,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 920000
+          "memoryUsagePpm": 920000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 680000,
-          "memoryUsagePpm": 980000
+          "memoryUsagePpm": 980000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 640000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 710000,
-          "memoryUsagePpm": 1010000
+          "memoryUsagePpm": 1010000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 900000
+          "memoryUsagePpm": 900000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 690000,
-          "memoryUsagePpm": 990000
+          "memoryUsagePpm": 990000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 700000,
-          "memoryUsagePpm": 1000000
+          "memoryUsagePpm": 1000000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 930000
+          "memoryUsagePpm": 930000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 670000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 2638827906662
         },
         {
           "hypervisorCpuUsagePpm": 790000,
-          "memoryUsagePpm": 990000
+          "memoryUsagePpm": 990000,
+          "controllerUserBytes": 2638827906662
         }
       ]
     },
@@ -3580,51 +3640,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 870000
+          "memoryUsagePpm": 870000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 900000
+          "memoryUsagePpm": 900000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 640000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 860000
+          "memoryUsagePpm": 860000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 730000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -3632,51 +3704,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 910000
+          "memoryUsagePpm": 910000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 980000
+          "memoryUsagePpm": 980000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 870000
+          "memoryUsagePpm": 870000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 960000
+          "memoryUsagePpm": 960000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 920000
+          "memoryUsagePpm": 920000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 900000
+          "memoryUsagePpm": 900000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 1979120929996
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 970000
+          "memoryUsagePpm": 970000,
+          "controllerUserBytes": 1979120929996
         }
       ]
     },
@@ -3684,51 +3768,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 910000
+          "memoryUsagePpm": 910000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 900000
+          "memoryUsagePpm": 900000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 870000
+          "memoryUsagePpm": 870000,
+          "controllerUserBytes": 769658139443
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 769658139443
         }
       ]
     },
@@ -3736,51 +3832,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 860000
+          "memoryUsagePpm": 860000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 750000
+          "memoryUsagePpm": 750000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 107374182400
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 910000
+          "memoryUsagePpm": 910000,
+          "controllerUserBytes": 107374182400
         }
       ]
     },
@@ -3788,51 +3896,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 860000
+          "memoryUsagePpm": 860000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 920000
+          "memoryUsagePpm": 920000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 930000
+          "memoryUsagePpm": 930000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 940000
+          "memoryUsagePpm": 940000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 870000
+          "memoryUsagePpm": 870000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 910000
+          "memoryUsagePpm": 910000,
+          "controllerUserBytes": 1374389534720
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 950000
+          "memoryUsagePpm": 950000,
+          "controllerUserBytes": 1374389534720
         }
       ]
     },
@@ -3840,51 +3960,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 77309411328
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 880000
+          "memoryUsagePpm": 880000,
+          "controllerUserBytes": 77309411328
         }
       ]
     },
@@ -3892,51 +4024,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 40000,
-          "memoryUsagePpm": 320000
+          "memoryUsagePpm": 320000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 80000,
-          "memoryUsagePpm": 360000
+          "memoryUsagePpm": 360000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 140000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 100000,
-          "memoryUsagePpm": 380000
+          "memoryUsagePpm": 380000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 450000
+          "memoryUsagePpm": 450000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 60000,
-          "memoryUsagePpm": 340000
+          "memoryUsagePpm": 340000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 110000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 90000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 130000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -3944,51 +4088,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 110000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 130000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -3996,51 +4152,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 550000
+          "memoryUsagePpm": 550000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -4048,51 +4216,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 600000
+          "memoryUsagePpm": 600000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -4100,51 +4280,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 650000
+          "memoryUsagePpm": 650000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -4152,51 +4344,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 700000
+          "memoryUsagePpm": 700000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -4204,51 +4408,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 750000
+          "memoryUsagePpm": 750000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -4256,51 +4472,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 640000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 740000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -4308,51 +4536,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 50000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 90000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 110000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 70000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 120000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 100000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 140000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -4360,51 +4600,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 120000,
-          "memoryUsagePpm": 320000
+          "memoryUsagePpm": 320000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 360000
+          "memoryUsagePpm": 360000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 380000
+          "memoryUsagePpm": 380000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 450000
+          "memoryUsagePpm": 450000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 140000,
-          "memoryUsagePpm": 340000
+          "memoryUsagePpm": 340000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -4412,51 +4664,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -4464,51 +4728,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 550000
+          "memoryUsagePpm": 550000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -4516,51 +4792,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 600000
+          "memoryUsagePpm": 600000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -4568,51 +4856,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 650000
+          "memoryUsagePpm": 650000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 700000
+          "memoryUsagePpm": 700000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -4620,51 +4920,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 700000
+          "memoryUsagePpm": 700000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -4672,51 +4984,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 640000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 670000,
-          "memoryUsagePpm": 750000
+          "memoryUsagePpm": 750000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 740000,
-          "memoryUsagePpm": 750000
+          "memoryUsagePpm": 750000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -4724,51 +5048,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 60000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 100000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 120000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 80000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 130000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 110000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -4776,51 +5112,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 130000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 870000
+          "memoryUsagePpm": 870000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -4828,51 +5176,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 320000
+          "memoryUsagePpm": 320000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 360000
+          "memoryUsagePpm": 360000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 380000
+          "memoryUsagePpm": 380000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 450000
+          "memoryUsagePpm": 450000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 340000
+          "memoryUsagePpm": 340000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -4880,51 +5240,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -4932,51 +5304,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 550000
+          "memoryUsagePpm": 550000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 600000
+          "memoryUsagePpm": 600000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -4984,51 +5368,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 600000
+          "memoryUsagePpm": 600000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -5036,51 +5432,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 650000
+          "memoryUsagePpm": 650000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 650000
+          "memoryUsagePpm": 650000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -5088,51 +5496,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 680000,
-          "memoryUsagePpm": 700000
+          "memoryUsagePpm": 700000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 670000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 640000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 740000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -5140,51 +5560,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 70000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 110000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 130000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 750000
+          "memoryUsagePpm": 750000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 90000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 140000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 120000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -5192,51 +5624,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 140000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 160000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -5244,51 +5688,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 230000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 890000
+          "memoryUsagePpm": 890000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -5296,51 +5752,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 320000
+          "memoryUsagePpm": 320000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 360000
+          "memoryUsagePpm": 360000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 380000
+          "memoryUsagePpm": 380000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 450000
+          "memoryUsagePpm": 450000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 300000,
-          "memoryUsagePpm": 340000
+          "memoryUsagePpm": 340000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -5348,51 +5816,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 370000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -5400,51 +5880,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 550000
+          "memoryUsagePpm": 550000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 440000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 550000
+          "memoryUsagePpm": 550000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -5452,51 +5944,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 600000
+          "memoryUsagePpm": 600000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -5504,51 +6008,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 690000,
-          "memoryUsagePpm": 650000
+          "memoryUsagePpm": 650000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 670000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 680000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 650000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 740000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -5556,51 +6072,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 80000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 120000,
-          "memoryUsagePpm": 610000
+          "memoryUsagePpm": 610000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 180000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 140000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 700000
+          "memoryUsagePpm": 700000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 100000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 130000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -5608,51 +6136,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 150000,
-          "memoryUsagePpm": 620000
+          "memoryUsagePpm": 620000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 190000,
-          "memoryUsagePpm": 660000
+          "memoryUsagePpm": 660000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 250000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 210000,
-          "memoryUsagePpm": 680000
+          "memoryUsagePpm": 680000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 750000
+          "memoryUsagePpm": 750000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 170000,
-          "memoryUsagePpm": 640000
+          "memoryUsagePpm": 640000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 200000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -5660,51 +6200,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 220000,
-          "memoryUsagePpm": 670000
+          "memoryUsagePpm": 670000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 260000,
-          "memoryUsagePpm": 710000
+          "memoryUsagePpm": 710000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 320000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 280000,
-          "memoryUsagePpm": 730000
+          "memoryUsagePpm": 730000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 800000
+          "memoryUsagePpm": 800000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 240000,
-          "memoryUsagePpm": 690000
+          "memoryUsagePpm": 690000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 270000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 515396075520
         }
       ]
     },
@@ -5712,51 +6264,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 290000,
-          "memoryUsagePpm": 720000
+          "memoryUsagePpm": 720000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 330000,
-          "memoryUsagePpm": 760000
+          "memoryUsagePpm": 760000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 390000,
-          "memoryUsagePpm": 820000
+          "memoryUsagePpm": 820000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 350000,
-          "memoryUsagePpm": 780000
+          "memoryUsagePpm": 780000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 850000
+          "memoryUsagePpm": 850000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 310000,
-          "memoryUsagePpm": 740000
+          "memoryUsagePpm": 740000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 830000
+          "memoryUsagePpm": 830000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 790000
+          "memoryUsagePpm": 790000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 340000,
-          "memoryUsagePpm": 770000
+          "memoryUsagePpm": 770000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 810000
+          "memoryUsagePpm": 810000,
+          "controllerUserBytes": 90194313216
         },
         {
           "hypervisorCpuUsagePpm": 510000,
-          "memoryUsagePpm": 840000
+          "memoryUsagePpm": 840000,
+          "controllerUserBytes": 90194313216
         }
       ]
     },
@@ -5764,51 +6328,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 360000,
-          "memoryUsagePpm": 320000
+          "memoryUsagePpm": 320000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 400000,
-          "memoryUsagePpm": 360000
+          "memoryUsagePpm": 360000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 460000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 420000,
-          "memoryUsagePpm": 380000
+          "memoryUsagePpm": 380000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 450000
+          "memoryUsagePpm": 450000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 380000,
-          "memoryUsagePpm": 340000
+          "memoryUsagePpm": 340000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 410000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 214748364800
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 450000
+          "memoryUsagePpm": 450000,
+          "controllerUserBytes": 214748364800
         }
       ]
     },
@@ -5816,51 +6392,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 430000,
-          "memoryUsagePpm": 370000
+          "memoryUsagePpm": 370000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 470000,
-          "memoryUsagePpm": 410000
+          "memoryUsagePpm": 410000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 530000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 490000,
-          "memoryUsagePpm": 430000
+          "memoryUsagePpm": 430000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 500000
+          "memoryUsagePpm": 500000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 450000,
-          "memoryUsagePpm": 390000
+          "memoryUsagePpm": 390000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 480000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 171798691840
         },
         {
           "hypervisorCpuUsagePpm": 580000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 171798691840
         }
       ]
     },
@@ -5868,51 +6456,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 500000,
-          "memoryUsagePpm": 420000
+          "memoryUsagePpm": 420000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 540000,
-          "memoryUsagePpm": 460000
+          "memoryUsagePpm": 460000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 600000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 560000,
-          "memoryUsagePpm": 480000
+          "memoryUsagePpm": 480000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 550000
+          "memoryUsagePpm": 550000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 520000,
-          "memoryUsagePpm": 440000
+          "memoryUsagePpm": 440000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 550000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 322122547200
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 322122547200
         }
       ]
     },
@@ -5920,51 +6520,63 @@
       "stats": [
         {
           "hypervisorCpuUsagePpm": 570000,
-          "memoryUsagePpm": 470000
+          "memoryUsagePpm": 470000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 610000,
-          "memoryUsagePpm": 510000
+          "memoryUsagePpm": 510000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 670000,
-          "memoryUsagePpm": 570000
+          "memoryUsagePpm": 570000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 630000,
-          "memoryUsagePpm": 530000
+          "memoryUsagePpm": 530000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 700000,
-          "memoryUsagePpm": 600000
+          "memoryUsagePpm": 600000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 590000,
-          "memoryUsagePpm": 490000
+          "memoryUsagePpm": 490000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 680000,
-          "memoryUsagePpm": 580000
+          "memoryUsagePpm": 580000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 640000,
-          "memoryUsagePpm": 540000
+          "memoryUsagePpm": 540000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 690000,
-          "memoryUsagePpm": 590000
+          "memoryUsagePpm": 590000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 620000,
-          "memoryUsagePpm": 520000
+          "memoryUsagePpm": 520000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 660000,
-          "memoryUsagePpm": 560000
+          "memoryUsagePpm": 560000,
+          "controllerUserBytes": 515396075520
         },
         {
           "hypervisorCpuUsagePpm": 740000,
-          "memoryUsagePpm": 630000
+          "memoryUsagePpm": 630000,
+          "controllerUserBytes": 515396075520
         }
       ]
     }

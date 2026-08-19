@@ -35,6 +35,10 @@ VM_CPU_USAGE_PPM = "hypervisorCpuUsagePpm"
 # guest figure and falls back to the hypervisor figure when guest is absent.
 VM_MEM_USAGE_PPM = "memoryUsagePpm"
 VM_MEM_USAGE_PPM_ALT = "hypervisorMemoryUsagePpm"
+# Actual consumed (thin-provisioned) storage for the VM. Used for the report's
+# Storage Used/Free columns; needs no NGT. (In-guest filesystem usage is not
+# exposed by this PC's groups API, so this is the reliable real-usage source.)
+VM_STORAGE_USED_BYTES = "controllerUserBytes"
 
 # ---- $select projections (REQUIRED by the v4 stats endpoints) ----------------
 # The v4 stats endpoints reject a request whose $select is empty (VMM-30102 /
@@ -64,6 +68,7 @@ VM_STATS_SELECT = _select(
     VM_CPU_USAGE_PPM,
     VM_MEM_USAGE_PPM,
     VM_MEM_USAGE_PPM_ALT,
+    VM_STORAGE_USED_BYTES,
 )
 
 # Efficiency status strings that mean "no usable value" (insufficient baseline,

@@ -180,12 +180,12 @@
     <h3>C. Virtual Machine Level View <span style="font-weight:400;color:var(--ink-soft);">(sorted by CPU MAX — showing {{ vm_shown }} of {{ vm_total }}; full inventory attached as CSV)</span></h3>
     <table class="data">
       <col class="name"><col style="width:6%"><col><col><col><col><col><col><col><col style="width:6%">
-      <tr><th>VM Name</th><th>vCPU</th><th>CPU MAX</th><th>Mem (GiB)</th><th>Mem Used</th><th>Mem MAX</th><th>Storage</th><th>Used *</th><th>Free *</th><th>Disks</th></tr>
+      <tr><th>VM Name</th><th>vCPU</th><th>CPU MAX</th><th>Mem (GiB)</th><th>Mem Used</th><th>Mem MAX</th><th>Storage</th><th>Used</th><th>Free</th><th>Disks</th></tr>
       {% for row in vm_rows %}
       <tr><td>{{ row.name }}</td><td>{{ row.vcpu }}</td><td class="{{ row.cpu_max_rag }}">{{ row.cpu_max }}{% if row.cpu_max_rag %}%{% endif %}</td><td>{{ row.mem }}</td><td>{{ row.mem_used }}</td><td>{{ row.mem_max }}</td><td>{{ row.storage }}</td><td>{{ row.guest_used }}</td><td>{{ row.guest_free }}</td><td>{{ row.disks }}</td></tr>
       {% endfor %}
     </table>
-    <p class="subnote">* Guest-level storage requires Nutanix Guest Tools (NGT); VMs without NGT show "—" (hypervisor-allocated capacity still reported in Storage).{% if vm_stats_failures %} {{ vm_stats_failures }} VM(s) could not be fully collected (stats unavailable); shown with "—".{% endif %}</p>
+    <p class="subnote">Storage = allocated capacity; Used = actual consumed (thin-provisioned) storage, Free = allocated − used.{% if vm_stats_failures %} {{ vm_stats_failures }} VM(s) could not be fully collected (stats unavailable); shown with "—".{% endif %}</p>
   </div>
 
   <!-- ============ FOOTER ============ -->

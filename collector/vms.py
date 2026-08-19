@@ -28,7 +28,7 @@ LOG = logging.getLogger("ntnx.vms")
 DEFAULT_STATS_WORKERS = 4
 
 
-def collect_vms(client, cluster_name_by_id, window, config, guest_map, eff_map):
+def collect_vms(client, cluster_name_by_id, window, config, eff_map):
     """Collect all in-scope VMs as ``VM`` records.
 
     Args:
@@ -38,7 +38,6 @@ def collect_vms(client, cluster_name_by_id, window, config, guest_map, eff_map):
             dropped).
         window: Dict with stats query ``params``.
         config: The parsed config dict (for ``exclude_vm_patterns``).
-        guest_map: Map of VM name -> (guest_used_bytes, guest_free_bytes).
         eff_map: Map of VM name -> canonical efficiency status.
 
     Returns:
@@ -74,7 +73,7 @@ def collect_vms(client, cluster_name_by_id, window, config, guest_map, eff_map):
     vms = []
     for (raw, cluster_name) in base_records:
         vms.append(
-            _build_vm(raw, cluster_name, stats_by_ext_id, guest_map, eff_map)
+            _build_vm(raw, cluster_name, stats_by_ext_id, eff_map)
         )
 
     if failure_count:
@@ -160,7 +159,7 @@ def _fetch_all_stats(client, ext_ids, window, workers=DEFAULT_STATS_WORKERS):
     return stats_by_ext_id, failure_count
 
 
-def _build_vm(raw, cluster_name, stats_by_ext_id, guest_map, eff_map):
+def _build_vm(raw, cluster_name, stats_by_ext_id, eff_map):
     """Build one ``VM`` from inventory plus merged stats / guest / efficiency."""
     ext_id = raw.get("extId")
     name = raw.get("name") or ext_id
@@ -188,6 +187,11 @@ def _build_vm(raw, cluster_name, stats_by_ext_id, guest_map, eff_map):
     cpu_max_pct = 0.0
     mem_avg_gib = 0.0
     mem_max_gib = 0.0
+    # Storage Used/Free come from the VM stats' actual consumed storage
+    # (controllerUserBytes), NOT NGT — available for every VM. Absent -> None
+    # -> em dash in the report.
+    guest_used_bytes = None
+    guest_free_bytes = None
     if stats_ok:
         payload = stats_by_ext_id[ext_id]
         cpu_samples = extract_samples(payload, metric_names.VM_CPU_USAGE_PPM)
@@ -207,11 +211,15 @@ def _build_vm(raw, cluster_name, stats_by_ext_id, guest_map, eff_map):
             mem_capacity_gib, units.aggregate_max(mem_samples)
         )
 
-    # Guest storage (NGT); absent -> None -> em dash in the report.
-    guest_used_bytes = None
-    guest_free_bytes = None
-    if name in guest_map:
-        guest_used_bytes, guest_free_bytes = guest_map[name]
+        # Actual consumed storage (thin-provisioned real usage).
+        used_samples = extract_samples(
+            payload, metric_names.VM_STORAGE_USED_BYTES
+        )
+        if used_samples:
+            used = int(units.aggregate_avg(used_samples))
+            guest_used_bytes = used
+            # Free = allocated (from inventory) minus used, never negative.
+            guest_free_bytes = max(0, int(storage_total_bytes) - used)
 
     # eff_map holds a list of statuses per VM; join for display (or None).
     efficiency_labels = eff_map.get(name)

@@ -30,20 +30,6 @@ _EFFICIENCY_BODY = {
     ),
 }
 
-# The groups query body for guest disk usage (NGT-sourced).
-_GUEST_STORAGE_BODY = {
-    "entity_type": metric_names.EFFICIENCY_ENTITY_TYPE,
-    "group_member_count": 500,
-    "group_member_offset": 0,
-    "group_member_attributes": [
-        {"attribute": "vm_name"},
-        {"attribute": "guest.disk_capacity_bytes"},
-        {"attribute": "guest.disk_usage_bytes"},
-    ],
-    "filter_criteria": "is_cvm==0",
-}
-
-
 def collect_efficiency_by_vm(client):
     """Return a mapping of VM name -> list of canonical efficiency statuses.
 
@@ -85,47 +71,6 @@ def collect_efficiency_by_vm(client):
                 vm_name,
             )
     return status_by_vm, True
-
-
-def collect_guest_storage_by_vm(client):
-    """Return a mapping of VM name -> (used_bytes, free_bytes) from NGT data.
-
-    VMs without NGT are simply absent from the result (the caller renders an em
-    dash for them). A failure of the whole call returns an empty map — guest
-    storage is a soft requirement and must never fail the report.
-
-    Args:
-        client: A PrismClient or MockClient.
-
-    Returns:
-        Dict mapping VM name to a ``(used_bytes, free_bytes)`` tuple.
-    """
-    result = {}
-    try:
-        payload = client.post_json(
-            "/api/nutanix/v3/groups", _GUEST_STORAGE_BODY
-        )
-    except Exception as exc:
-        LOG.warning(
-            "Guest-storage groups call failed (%s); guest columns show '—'",
-            exc,
-        )
-        return result
-
-    for entity in groups_entities(payload):
-        vm_name = entity_attr(entity, "vm_name")
-        capacity = entity_attr(entity, "guest.disk_capacity_bytes")
-        used = entity_attr(entity, "guest.disk_usage_bytes")
-        if not vm_name or capacity is None or used is None:
-            continue
-        try:
-            capacity_bytes = int(capacity)
-            used_bytes = int(used)
-        except (TypeError, ValueError):
-            continue
-        free_bytes = max(0, capacity_bytes - used_bytes)
-        result[vm_name] = (used_bytes, free_bytes)
-    return result
 
 
 def collect_critical_alert_count(client):

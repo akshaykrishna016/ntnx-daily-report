@@ -282,8 +282,8 @@ class TestCsvRow(unittest.TestCase):
         vm.guest_free_bytes = None
         row = vm_to_csv_row(vm)
         as_dict = dict(zip(CSV_HEADER, row))
-        self.assertEqual(as_dict["Guest Used"], "—")
-        self.assertEqual(as_dict["Guest Free"], "—")
+        self.assertEqual(as_dict["Storage Used"], "—")
+        self.assertEqual(as_dict["Storage Free"], "—")
 
 
 if __name__ == "__main__":

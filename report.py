@@ -294,13 +294,14 @@ def collect_all(client, config, window):
             clusters_mod.build_cluster(client, raw, cluster_hosts, window)
         )
 
-    # --- Efficiency + guest storage (estate-wide, soft) ----------------------
+    # --- Efficiency states (estate-wide, soft) -------------------------------
     eff_map, eff_available = efficiency_mod.collect_efficiency_by_vm(client)
-    guest_map = efficiency_mod.collect_guest_storage_by_vm(client)
 
-    # --- VMs (with stats, guest and efficiency merged) -----------------------
+    # --- VMs (with stats, storage usage and efficiency merged) ---------------
+    # Storage Used/Free come from each VM's stats (actual consumed storage), so
+    # there is no separate guest-storage call.
     vm_records, vm_failures = vms_mod.collect_vms(
-        client, cluster_name_by_id, window, config, guest_map, eff_map
+        client, cluster_name_by_id, window, config, eff_map
     )
 
     # --- Optional KPI values (soft) ------------------------------------------
