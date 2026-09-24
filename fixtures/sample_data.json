@@ -9386,6 +9386,36 @@
                     ]
                   }
                 ]
+              },
+              {
+                "name": "capacity.cpu_runway",
+                "values": [
+                  {
+                    "values": [
+                      "365"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.memory_runway",
+                "values": [
+                  {
+                    "values": [
+                      "142"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.storage_runway",
+                "values": [
+                  {
+                    "values": [
+                      "184"
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -9411,6 +9441,36 @@
                     ]
                   }
                 ]
+              },
+              {
+                "name": "capacity.cpu_runway",
+                "values": [
+                  {
+                    "values": [
+                      "410"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.memory_runway",
+                "values": [
+                  {
+                    "values": [
+                      "198"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.storage_runway",
+                "values": [
+                  {
+                    "values": [
+                      "263"
+                    ]
+                  }
+                ]
               }
             ]
           },
@@ -9429,6 +9489,36 @@
               },
               {
                 "name": "capacity.runway",
+                "values": [
+                  {
+                    "values": [
+                      "612"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.cpu_runway",
+                "values": [
+                  {
+                    "values": [
+                      "820"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.memory_runway",
+                "values": [
+                  {
+                    "values": [
+                      "540"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "capacity.storage_runway",
                 "values": [
                   {
                     "values": [

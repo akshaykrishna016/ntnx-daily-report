@@ -102,15 +102,21 @@ def collect_critical_alert_count(client):
     return int(count)
 
 
-def collect_storage_runway_days(client):
-    """Return the worst-cluster storage runway in days, or None.
+def collect_runway_days(client, runway_attr):
+    """Return the worst-cluster runway (days) for one resource, or None.
+
+    Queried in its own groups call so an attribute name that is invalid for this
+    PC version fails only this resource, not the others (the groups API rejects
+    a whole request if any requested attribute is unknown).
 
     Args:
         client: A PrismClient or MockClient.
+        runway_attr: The v3 groups attribute for the resource's runway
+            (e.g. ``capacity.runway`` for storage).
 
     Returns:
         The minimum (worst) runway across clusters as an int, or ``None`` when
-        the call failed or no value was present.
+        the call failed, the attribute is unknown, or no value was present.
     """
     body = {
         "entity_type": metric_names.RUNWAY_ENTITY_TYPE,
@@ -118,18 +124,22 @@ def collect_storage_runway_days(client):
         "group_member_offset": 0,
         "group_member_attributes": [
             {"attribute": "cluster_name"},
-            {"attribute": metric_names.RUNWAY_ATTR},
+            {"attribute": runway_attr},
         ],
     }
     try:
         payload = client.post_json("/api/nutanix/v3/groups", body)
     except Exception as exc:
-        LOG.warning("Runway groups call failed (%s); KPI shows n/a", exc)
+        LOG.warning(
+            "Runway groups call for '%s' failed (%s); shows N/A",
+            runway_attr,
+            exc,
+        )
         return None
 
     runways = []
     for entity in groups_entities(payload):
-        raw = entity_attr(entity, metric_names.RUNWAY_ATTR)
+        raw = entity_attr(entity, runway_attr)
         if raw is None:
             continue
         try:
@@ -139,3 +149,8 @@ def collect_storage_runway_days(client):
     if not runways:
         return None
     return min(runways)
+
+
+def collect_storage_runway_days(client):
+    """Back-compat helper: worst-cluster storage runway in days, or None."""
+    return collect_runway_days(client, metric_names.RUNWAY_ATTR_STORAGE)

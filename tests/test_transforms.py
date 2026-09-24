@@ -27,6 +27,7 @@ import units
 from render.csvout import vm_to_csv_row, CSV_HEADER
 from collector.model import VM
 from collector.parsing import extract_samples, latest_sample
+from collector.summarize import classify_underutilized
 
 
 class TestPpmAndPercent(unittest.TestCase):
@@ -240,6 +241,52 @@ class TestStatsParsing(unittest.TestCase):
     def test_empty_payload(self):
         self.assertEqual(extract_samples({}, "x"), [])
         self.assertEqual(extract_samples({"data": None}, "x"), [])
+
+
+class TestUnderutilized(unittest.TestCase):
+    """Tests for the underutilized-VM classifier (feature 1)."""
+
+    def _vm(self, **over):
+        base = dict(
+            name="v", cluster_name="c", vcpus=8, cpu_avg_pct=5.0,
+            cpu_max_pct=9.0, mem_capacity_gib=64.0, mem_avg_gib=6.0,
+            mem_max_gib=8.0, storage_total_bytes=0, guest_used_bytes=None,
+            guest_free_bytes=None, disk_count=1, power_state="ON",
+            efficiency_status=None, stats_ok=True,
+        )
+        base.update(over)
+        return VM(**base)
+
+    def test_low_usage_flagged(self):
+        # avg CPU 5% < 15 and mem 6/64 ~9% < 30 -> Low usage.
+        flagged, reason = classify_underutilized(self._vm(), 15, 30)
+        self.assertTrue(flagged)
+        self.assertEqual(reason, "Low usage")
+
+    def test_busy_vm_not_flagged(self):
+        vm = self._vm(cpu_avg_pct=80.0, mem_avg_gib=50.0)
+        flagged, reason = classify_underutilized(vm, 15, 30)
+        self.assertFalse(flagged)
+        self.assertEqual(reason, "")
+
+    def test_powered_off_never_flagged(self):
+        vm = self._vm(power_state="OFF")
+        flagged, _ = classify_underutilized(vm, 15, 30)
+        self.assertFalse(flagged)
+
+    def test_xfit_overprovisioned_flagged_even_if_busy(self):
+        vm = self._vm(cpu_avg_pct=90.0, mem_avg_gib=60.0,
+                      efficiency_status="Overprovisioned")
+        flagged, reason = classify_underutilized(vm, 15, 30)
+        self.assertTrue(flagged)
+        self.assertIn("Overprovisioned", reason)
+
+    def test_both_signals_combine(self):
+        vm = self._vm(efficiency_status="Inactive")  # also low usage
+        flagged, reason = classify_underutilized(vm, 15, 30)
+        self.assertTrue(flagged)
+        self.assertIn("Inactive", reason)
+        self.assertIn("Low usage", reason)
 
 
 class TestCsvRow(unittest.TestCase):

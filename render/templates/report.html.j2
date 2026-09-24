@@ -90,6 +90,27 @@
   .dot { display:inline-block; width:9px; height:9px; border-radius:50%; margin:0 4px 0 10px; vertical-align:middle; }
 
   .ftr { background:#F4F4F7; border-top:1px solid var(--line); padding:14px 32px; font-size:9.5px; color:var(--ink-soft); line-height:1.7; }
+
+  /* ============ CAPACITY RUNWAY (feature 3) ============ */
+  .runway { display:flex; gap:12px; margin:8px 0 4px; }
+  .runway .rw { flex:1; text-align:center; border:1px solid var(--line); border-top:3px solid var(--nx-deep); padding:12px 8px; }
+  .runway .rw .v { font-size:20px; font-weight:700; color:var(--nx-ink); }
+  .runway .rw .l { font-size:10px; color:var(--ink-soft); text-transform:uppercase; letter-spacing:.5px; margin-top:2px; }
+
+  /* ============ PER-CLUSTER BLOCK (feature 2) ============ */
+  .cluster-block { border:1px solid var(--line); padding:12px 14px 14px; margin:16px 0; }
+  .cluster-h { margin:0 0 10px !important; border-bottom:1px solid var(--line); padding-bottom:6px; color:var(--nx-deep) !important; font-size:13px !important; text-transform:none !important; letter-spacing:0 !important; }
+
+  /* ============ CLUSTER VIEW SELECTOR (dropdown) ============ */
+  .view-selector { margin:14px 0 4px; font-size:12px; color:var(--nx-gray); font-weight:600; }
+  .view-selector select { font-size:13px; font-weight:400; padding:5px 10px; margin-left:6px; border:1px solid var(--line); border-top:2px solid var(--nx-purple); color:var(--nx-ink); background:#fff; cursor:pointer; }
+
+  /* When printing / saving to PDF, reveal every cluster view and hide the
+     interactive dropdown so the whole dashboard is captured. */
+  @media print {
+    .cluster-view { display:block !important; }
+    .view-selector { display:none !important; }
+  }
 </style>
 </head>
 <body>
@@ -119,37 +140,74 @@
       {% endfor %}
     </div>
 
-    <h3>Overall Capacity vs. Consumed (all clusters)</h3>
-    <div class="gauges">
-      {% for gauge in gauges %}
-      <div class="gauge">
-        <div class="title">{{ gauge.title }}</div>
-        <img src="{{ gauge.img }}" alt="{{ gauge.title }} gauge">
-        <div class="detail">{{ gauge.detail }}</div>
-      </div>
-      {% endfor %}
+    <h3>Capacity Runway <span style="font-weight:400;color:var(--ink-soft);">(estimated days to full — worst cluster)</span></h3>
+    <div class="runway">
+      <div class="rw"><div class="v">{{ runway.cpu }}</div><div class="l">CPU</div></div>
+      <div class="rw"><div class="v">{{ runway.mem }}</div><div class="l">Memory</div></div>
+      <div class="rw"><div class="v">{{ runway.storage }}</div><div class="l">Storage</div></div>
     </div>
+    {% if not runway.any %}<p class="subnote">Runway is not exposed by this Prism Central version; showing N/A.</p>{% endif %}
+
     <div class="legend">Thresholds: <span class="dot" style="background:var(--rag-green);"></span>&lt;{{ thresholds.amber }}% <span class="dot" style="background:var(--rag-amber);"></span>{{ thresholds.amber }}–{{ thresholds.red }}% <span class="dot" style="background:var(--rag-red);"></span>&gt;{{ thresholds.red }}%</div>
 
-    <h3>VM Efficiency Snapshot <span style="font-weight:400;color:var(--ink-soft);">(Prism Central X-FIT analysis)</span></h3>
-    <div class="eff">
-      {% for tile in tiles %}
-      <div class="tile{% if tile.light %} light{% endif %}" style="background:{{ tile.bg }};"><div class="n">{{ tile.n }}</div><div class="t">{{ tile.t }}</div><div class="d">{{ tile.d }}</div></div>
-      {% endfor %}
+    <!-- ===== Dashboard: Overall by default + per-cluster via dropdown ===== -->
+    {% macro render_block(block) %}
+    <div class="cluster-block">
+      <h3 class="cluster-h">{{ block.name }} <span style="font-weight:400;color:var(--ink-soft);">— {{ block.host_count }} hosts · {{ block.vm_count }} VMs</span></h3>
+      <div class="gauges">
+        {% for gauge in block.gauges %}
+        <div class="gauge"><div class="title">{{ gauge.title }}</div><img src="{{ gauge.img }}" alt="{{ gauge.title }} gauge"><div class="detail">{{ gauge.detail }}</div></div>
+        {% endfor %}
+      </div>
+      <div class="eff" style="margin-top:12px;">
+        {% for tile in block.tiles %}
+        <div class="tile{% if tile.light %} light{% endif %}" style="background:{{ tile.bg }};"><div class="n">{{ tile.n }}</div><div class="t">{{ tile.t }}</div><div class="d">{{ tile.d }}</div></div>
+        {% endfor %}
+      </div>
+      <div class="cols2" style="margin-top:14px;">
+        <div><h3 style="margin-top:0;">Top {{ top_n }} VMs — CPU Usage</h3><img src="{{ block.cpu_bar }}" alt="Top VMs by CPU"></div>
+        <div><h3 style="margin-top:0;">Top {{ top_n }} VMs — Memory Usage</h3><img src="{{ block.mem_bar }}" alt="Top VMs by Memory"></div>
+      </div>
     </div>
+    {% endmacro %}
+
+    <div class="view-selector">
+      Dashboard view:
+      <select id="clusterSelect" onchange="showClusterView(this.value)">
+        <option value="overall">Overall (all clusters)</option>
+        {% for cl in per_cluster %}<option value="{{ loop.index0 }}">{{ cl.name }}</option>{% endfor %}
+      </select>
+    </div>
+    <noscript><p class="subnote">Showing the Overall view — open in a browser with JavaScript enabled to select individual clusters. (All per-cluster data is also in the Deep Dive tables below.)</p></noscript>
+
+    <div class="cluster-view" id="cview-overall">{{ render_block(overall) }}</div>
+    {% for cl in per_cluster %}
+    <div class="cluster-view" id="cview-{{ loop.index0 }}" style="display:none;">{{ render_block(cl) }}</div>
+    {% endfor %}
     {% if eff_footnote %}<p class="subnote">{{ eff_footnote }}</p>{% endif %}
 
-    <h3>Top Talkers (24h average)</h3>
-    <div class="cols2">
-      <div>
-        <h3 style="margin-top:4px;">Top {{ top_n }} VMs — CPU Usage</h3>
-        <img src="{{ cpu_bar }}" alt="Top VMs by CPU">
-      </div>
-      <div>
-        <h3 style="margin-top:4px;">Top {{ top_n }} VMs — Memory Usage</h3>
-        <img src="{{ mem_bar }}" alt="Top VMs by Memory">
-      </div>
-    </div>
+    <script>
+      function showClusterView(value) {
+        var views = document.querySelectorAll('.cluster-view');
+        for (var i = 0; i < views.length; i++) { views[i].style.display = 'none'; }
+        var chosen = document.getElementById('cview-' + value);
+        if (chosen) { chosen.style.display = 'block'; }
+      }
+    </script>
+
+    <!-- ===== Underutilized VMs (feature 1) ===== -->
+    <h3>Underutilized VMs <span style="font-weight:400;color:var(--ink-soft);">(reclaimable — X-FIT Overprovisioned/Inactive, or avg CPU &lt;{{ underutilized_cpu_pct }}% and memory &lt;{{ underutilized_mem_pct }}%)</span></h3>
+    {% if underutilized_rows %}
+    <table class="data">
+      <col class="name"><col><col><col><col><col><col><col class="name">
+      <tr><th>VM Name</th><th>Cluster</th><th>vCPU</th><th>CPU avg %</th><th>Mem (GiB)</th><th>Mem used</th><th>Mem %</th><th>Reason</th></tr>
+      {% for r in underutilized_rows %}
+      <tr><td>{{ r.name }}</td><td>{{ r.cluster }}</td><td>{{ r.vcpu }}</td><td>{{ r.cpu_avg }}{% if r.cpu_avg != '—' %}%{% endif %}</td><td>{{ r.mem }}</td><td>{{ r.mem_used }}</td><td>{{ r.mem_pct }}{% if r.mem_pct != '—' %}%{% endif %}</td><td style="text-align:left;">{{ r.reason }}</td></tr>
+      {% endfor %}
+    </table>
+    {% else %}
+    <p class="subnote">No underutilized VMs identified.</p>
+    {% endif %}
   </div>
 
   <!-- ============ DEEP DIVE ============ -->

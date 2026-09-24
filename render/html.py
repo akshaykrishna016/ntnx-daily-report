@@ -23,6 +23,7 @@ import os
 from jinja2 import Environment, FileSystemLoader, select_autoescape
 
 import units
+from collector.summarize import classify_underutilized
 from render.charts import (
     donut,
     top_vms_cpu_bar,
@@ -175,54 +176,277 @@ def _vm_row(vm, thresholds):
     }
 
 
-def build_charts(summary, vms, config):
-    """Render every chart image and return them keyed for the template.
+def _efficiency_counts_for(vms_subset):
+    """Count efficiency labels across a subset of VMs (feature 2 per-cluster).
+
+    A VM's status may be comma-joined, so each label is counted.
 
     Args:
-        summary: The ``Summary`` (for the three gauges).
-        vms: All in-scope VMs (for the two top-talker charts).
+        vms_subset: Iterable of ``VM`` records.
+
+    Returns:
+        A dict mapping each canonical label to its count.
+    """
+    counts = {label: 0 for label in units.EFFICIENCY_CANONICAL}
+    for vm in vms_subset:
+        if not vm.efficiency_status:
+            continue
+        for label in [p.strip() for p in vm.efficiency_status.split(",")]:
+            if label in counts:
+                counts[label] += 1
+    return counts
+
+
+def _cluster_pcts(cluster):
+    """Return (cpu_pct, mem_pct, storage_pct) for one cluster's gauges."""
+    cpu_pct = cluster.cpu_avg_pct
+    mem_pct = (
+        cluster.mem_avg_gib / cluster.mem_capacity_gib * 100.0
+        if cluster.mem_capacity_gib
+        else 0.0
+    )
+    storage_pct = (
+        cluster.storage_used_bytes / cluster.storage_total_bytes * 100.0
+        if cluster.storage_total_bytes
+        else 0.0
+    )
+    return cpu_pct, mem_pct, storage_pct
+
+
+def build_cluster_blocks(clusters, hosts, vms, config):
+    """Build one full dashboard block per cluster (feature 2).
+
+    Each block carries the cluster's three capacity gauges (as chart images),
+    its VM efficiency tiles, and its Top Talker bar charts — so every cluster
+    can be monitored on its own.
+
+    Args:
+        clusters: List of ``Cluster`` records.
+        hosts: List of ``Host`` records (for the per-cluster host count).
+        vms: List of ``VM`` records (partitioned by ``cluster_name``).
         config: Parsed config (thresholds, top_n_vms).
 
     Returns:
-        A dict with the gauge and bar-chart data URIs.
+        A list of block dicts in cluster order.
     """
     thresholds = config["report"]["thresholds"]
+    amber = thresholds["amber"]
+    red = thresholds["red"]
     top_n = config["report"].get("top_n_vms", 10)
 
-    # Only VMs with valid stats can be ranked.
-    ranked_by_cpu = sorted(
-        (vm for vm in vms if vm.stats_ok),
-        key=lambda vm: vm.cpu_avg_pct,
-        reverse=True,
-    )[:top_n]
-    ranked_by_mem = sorted(
-        (vm for vm in vms if vm.stats_ok),
-        key=lambda vm: vm.mem_avg_gib,
-        reverse=True,
-    )[:top_n]
+    blocks = []
+    for cluster in clusters:
+        cluster_vms = [vm for vm in vms if vm.cluster_name == cluster.name]
+        host_count = sum(1 for h in hosts if h.cluster_name == cluster.name)
+        cpu_pct, mem_pct, storage_pct = _cluster_pcts(cluster)
 
-    cpu_rows = [(vm.name, vm.cpu_avg_pct) for vm in ranked_by_cpu]
-    mem_rows = [(vm.name, vm.mem_avg_gib) for vm in ranked_by_mem]
+        gauges = [
+            {
+                "title": "CPU",
+                "img": donut(cpu_pct, amber, red),
+                "detail": "{} of {} GHz".format(
+                    units.fmt_int(
+                        units.hz_to_ghz(cluster.cpu_capacity_hz)
+                        * cpu_pct / 100.0
+                    ),
+                    units.fmt_int(units.hz_to_ghz(cluster.cpu_capacity_hz)),
+                ),
+            },
+            {
+                "title": "Memory",
+                "img": donut(mem_pct, amber, red),
+                "detail": "{} of {} GiB".format(
+                    units.fmt_int(cluster.mem_avg_gib),
+                    units.fmt_int(cluster.mem_capacity_gib),
+                ),
+            },
+            {
+                "title": "Storage",
+                "img": donut(storage_pct, amber, red),
+                "detail": "{} of {}".format(
+                    units.fmt_tib(cluster.storage_used_bytes),
+                    units.fmt_tib(cluster.storage_total_bytes),
+                ),
+            },
+        ]
+
+        # Per-cluster efficiency tiles.
+        counts = _efficiency_counts_for(cluster_vms)
+        tiles = []
+        for (label, bg, light, desc) in _TILE_STYLE:
+            tiles.append(
+                {"n": str(counts.get(label, 0)), "t": label, "d": desc,
+                 "bg": bg, "light": light}
+            )
+
+        # Per-cluster Top Talkers (VMs with valid stats only).
+        ranked_cpu = sorted(
+            (vm for vm in cluster_vms if vm.stats_ok),
+            key=lambda vm: vm.cpu_avg_pct, reverse=True,
+        )[:top_n]
+        ranked_mem = sorted(
+            (vm for vm in cluster_vms if vm.stats_ok),
+            key=lambda vm: vm.mem_avg_gib, reverse=True,
+        )[:top_n]
+        cpu_bar = top_vms_cpu_bar(
+            [(vm.name, vm.cpu_avg_pct) for vm in ranked_cpu], amber, red
+        )
+        mem_bar = top_vms_mem_bar(
+            [(vm.name, vm.mem_avg_gib) for vm in ranked_mem]
+        )
+
+        blocks.append(
+            {
+                "name": cluster.name,
+                "host_count": host_count,
+                "vm_count": len(cluster_vms),
+                "gauges": gauges,
+                "tiles": tiles,
+                "cpu_bar": cpu_bar,
+                "mem_bar": mem_bar,
+            }
+        )
+    return blocks
+
+
+def _runway_display(days):
+    """Format a runway value as 'N days' or 'N/A'."""
+    return "{} days".format(days) if days is not None else "N/A"
+
+
+def build_underutilized_rows(vms, config):
+    """Build the Underutilized VMs table rows (feature 1).
+
+    Args:
+        vms: List of ``VM`` records.
+        config: Parsed config (``report.underutilized`` thresholds).
+
+    Returns:
+        A list of display-row dicts (sorted most-idle first).
+    """
+    under_cfg = config["report"].get("underutilized") or {}
+    cpu_threshold = under_cfg.get("cpu_pct", 15)
+    mem_threshold = under_cfg.get("mem_pct", 30)
+
+    rows = []
+    for vm in vms:
+        flagged, reason = classify_underutilized(
+            vm, cpu_threshold, mem_threshold
+        )
+        # Record the reason on every VM (empty when not flagged) so the CSV can
+        # include it without re-running the classification.
+        vm.underutilized_reason = reason
+        if not flagged:
+            continue
+        mem_pct = (
+            vm.mem_avg_gib / vm.mem_capacity_gib * 100.0
+            if (vm.stats_ok and vm.mem_capacity_gib)
+            else 0.0
+        )
+        rows.append(
+            {
+                "name": vm.name,
+                "cluster": vm.cluster_name,
+                "vcpu": vm.vcpus,
+                "cpu_avg": units.pct_round(vm.cpu_avg_pct)
+                if vm.stats_ok else EM_DASH,
+                "mem": units.fmt_int(vm.mem_capacity_gib),
+                "mem_used": units.fmt_int(vm.mem_avg_gib)
+                if vm.stats_ok else EM_DASH,
+                "mem_pct": units.pct_round(mem_pct) if vm.stats_ok
+                else EM_DASH,
+                "reason": reason,
+                "_sort": vm.cpu_avg_pct if vm.stats_ok else 999,
+            }
+        )
+    rows.sort(key=lambda r: r["_sort"])
+    for row in rows:
+        del row["_sort"]
+    return rows
+
+
+def build_overall_block(summary, hosts, vms, config):
+    """Build the estate-wide 'Overall (all clusters)' dashboard block.
+
+    Same shape as a per-cluster block (gauges, efficiency tiles, Top Talkers)
+    so the template renders them identically; this is the default view of the
+    cluster selector.
+
+    Args:
+        summary: The ``Summary`` (estate aggregates).
+        hosts: All ``Host`` records (for the host count).
+        vms: All ``VM`` records (for estate Top Talkers).
+        config: Parsed config (thresholds, top_n_vms).
+
+    Returns:
+        A block dict identical in shape to ``build_cluster_blocks`` entries.
+    """
+    thresholds = config["report"]["thresholds"]
+    amber = thresholds["amber"]
+    red = thresholds["red"]
+    top_n = config["report"].get("top_n_vms", 10)
+
+    gauges = [
+        {
+            "title": "CPU",
+            "img": donut(summary.cpu_pct, amber, red),
+            "detail": "{} of {} GHz".format(
+                units.fmt_int(units.hz_to_ghz(summary.cpu_used_hz)),
+                units.fmt_int(units.hz_to_ghz(summary.cpu_capacity_hz)),
+            ),
+        },
+        {
+            "title": "Memory",
+            "img": donut(summary.mem_pct, amber, red),
+            "detail": "{} of {} GiB".format(
+                units.fmt_int(summary.mem_used_gib),
+                units.fmt_int(summary.mem_capacity_gib),
+            ),
+        },
+        {
+            "title": "Storage",
+            "img": donut(summary.storage_pct, amber, red),
+            "detail": "{} of {}".format(
+                units.fmt_tib(summary.storage_used_bytes),
+                units.fmt_tib(summary.storage_total_bytes),
+            ),
+        },
+    ]
+
+    tiles = []
+    for (label, bg, light, desc) in _TILE_STYLE:
+        number = (
+            str(summary.efficiency_counts.get(label, 0))
+            if summary.efficiency_available else "N/A"
+        )
+        tiles.append({"n": number, "t": label, "d": desc,
+                      "bg": bg, "light": light})
+
+    ranked_cpu = sorted(
+        (vm for vm in vms if vm.stats_ok),
+        key=lambda vm: vm.cpu_avg_pct, reverse=True,
+    )[:top_n]
+    ranked_mem = sorted(
+        (vm for vm in vms if vm.stats_ok),
+        key=lambda vm: vm.mem_avg_gib, reverse=True,
+    )[:top_n]
 
     return {
-        "cpu_gauge": donut(
-            summary.cpu_pct, thresholds["amber"], thresholds["red"]
-        ),
-        "mem_gauge": donut(
-            summary.mem_pct, thresholds["amber"], thresholds["red"]
-        ),
-        "storage_gauge": donut(
-            summary.storage_pct, thresholds["amber"], thresholds["red"]
-        ),
+        "name": "Overall (all clusters)",
+        "host_count": len(hosts),
+        "vm_count": summary.vm_total,
+        "gauges": gauges,
+        "tiles": tiles,
         "cpu_bar": top_vms_cpu_bar(
-            cpu_rows, thresholds["amber"], thresholds["red"]
+            [(vm.name, vm.cpu_avg_pct) for vm in ranked_cpu], amber, red
         ),
-        "mem_bar": top_vms_mem_bar(mem_rows),
+        "mem_bar": top_vms_mem_bar(
+            [(vm.name, vm.mem_avg_gib) for vm in ranked_mem]
+        ),
     }
 
 
-def build_report_context(summary, clusters, hosts, vms, charts, logos, config,
-                         meta):
+def build_report_context(summary, clusters, hosts, vms, logos, config, meta):
     """Assemble the full context dict passed to the report template.
 
     Args:
@@ -230,7 +454,6 @@ def build_report_context(summary, clusters, hosts, vms, charts, logos, config,
         clusters: List of ``Cluster``.
         hosts: List of ``Host``.
         vms: List of ``VM``.
-        charts: The dict returned by ``build_charts``.
         logos: Dict with ``siemens`` / ``nutanix`` data URIs (or None).
         config: Parsed config.
         meta: Dict of run metadata (dates, host, generation time strings).
@@ -245,11 +468,6 @@ def build_report_context(summary, clusters, hosts, vms, charts, logos, config,
     alerts_value = (
         str(summary.critical_alert_count)
         if summary.critical_alert_count is not None
-        else "n/a"
-    )
-    runway_value = (
-        "{} days".format(summary.storage_runway_days)
-        if summary.storage_runway_days is not None
         else "n/a"
     )
     kpis = [
@@ -270,62 +488,43 @@ def build_report_context(summary, clusters, hosts, vms, charts, logos, config,
         {
             "value": alerts_value,
             "label": "Critical alerts (24h)",
-            "color": "#D0342C"
-            if summary.critical_alert_count
-            else None,
+            "color": "#D0342C" if summary.critical_alert_count else None,
         },
         {
-            "value": runway_value,
-            "label": "Storage runway (worst cluster)",
+            "value": str(summary.underutilized_count),
+            "label": "Underutilized VMs",
             "color": None,
         },
     ]
 
-    # Gauges with detail strings.
-    gauges = [
-        {
-            "title": "CPU",
-            "img": charts["cpu_gauge"],
-            "detail": "{} GHz used of {} GHz".format(
-                units.fmt_int(units.hz_to_ghz(summary.cpu_used_hz)),
-                units.fmt_int(units.hz_to_ghz(summary.cpu_capacity_hz)),
-            ),
-        },
-        {
-            "title": "Memory",
-            "img": charts["mem_gauge"],
-            "detail": "{} GiB used of {} GiB".format(
-                units.fmt_int(summary.mem_used_gib),
-                units.fmt_int(summary.mem_capacity_gib),
-            ),
-        },
-        {
-            "title": "Storage",
-            "img": charts["storage_gauge"],
-            "detail": "{} used of {}".format(
-                units.fmt_tib(summary.storage_used_bytes),
-                units.fmt_tib(summary.storage_total_bytes),
-            ),
-        },
-    ]
+    # Capacity runway (feature 3): worst-cluster days per resource.
+    runway = {
+        "cpu": _runway_display(summary.cpu_runway_days),
+        "mem": _runway_display(summary.mem_runway_days),
+        "storage": _runway_display(summary.storage_runway_days),
+        "any": (
+            summary.cpu_runway_days is not None
+            or summary.mem_runway_days is not None
+            or summary.storage_runway_days is not None
+        ),
+    }
 
-    # Efficiency tiles.
-    tiles = []
-    for (label, bg, light, desc) in _TILE_STYLE:
-        if summary.efficiency_available:
-            number = str(summary.efficiency_counts.get(label, 0))
-        else:
-            number = "N/A"
-        tiles.append(
-            {"n": number, "t": label, "d": desc, "bg": bg, "light": light}
-        )
+    # Dashboard: default "Overall" block + one selectable block per cluster.
+    overall_block = build_overall_block(summary, hosts, vms, config)
+    per_cluster = build_cluster_blocks(clusters, hosts, vms, config)
     eff_footnote = (
         None
         if summary.efficiency_available
         else "insufficient baseline data (X-FIT needs ~21 days of history)"
     )
 
-    # Cluster table rows.
+    # Underutilized VMs (feature 1).
+    underutilized_rows = build_underutilized_rows(vms, config)
+    summary.underutilized_count = len(underutilized_rows)
+    # Refresh the KPI now that the count is known.
+    kpis[3]["value"] = str(summary.underutilized_count)
+
+    # Deep-dive cluster table rows.
     cluster_rows = [_entity_row(cluster, thresholds) for cluster in clusters]
 
     # Host table grouped by cluster, in cluster order.
@@ -340,7 +539,7 @@ def build_report_context(summary, clusters, hosts, vms, charts, logos, config,
             }
         )
 
-    # VM table: top N by CPU MAX (design document, section 7a).
+    # VM table: top N by CPU MAX.
     vms_ranked = sorted(
         vms,
         key=lambda vm: (vm.cpu_max_pct if vm.stats_ok else -1),
@@ -353,12 +552,16 @@ def build_report_context(summary, clusters, hosts, vms, charts, logos, config,
         "meta": meta,
         "logos": logos,
         "kpis": kpis,
-        "gauges": gauges,
         "thresholds": thresholds,
-        "tiles": tiles,
+        "runway": runway,
+        "overall": overall_block,
+        "per_cluster": per_cluster,
         "eff_footnote": eff_footnote,
-        "cpu_bar": charts["cpu_bar"],
-        "mem_bar": charts["mem_bar"],
+        "underutilized_rows": underutilized_rows,
+        "underutilized_cpu_pct": (config["report"].get("underutilized") or {})
+        .get("cpu_pct", 15),
+        "underutilized_mem_pct": (config["report"].get("underutilized") or {})
+        .get("mem_pct", 30),
         "top_n": config["report"].get("top_n_vms", 10),
         "cluster_rows": cluster_rows,
         "host_groups": host_groups,
@@ -494,7 +697,7 @@ def _render_body_html(summary, meta, alerts_value, runway_value,
              None),
             (alerts_value, "Critical alerts (24h)",
              "#D0342C" if summary.critical_alert_count else None),
-            (runway_value, "Storage runway", None),
+            (str(summary.underutilized_count), "Underutilized VMs", None),
         ]
     )
 
@@ -569,7 +772,11 @@ color:#ffffff;font-family:Arial,sans-serif;font-size:12px;font-weight:normal;">\
       {capacity_html}
     </table>
   </td></tr>
-  <tr><td style="padding:12px 20px 4px;font-family:Arial,sans-serif;\
+  <tr><td style="padding:12px 20px 2px;font-family:Arial,sans-serif;\
+font-size:12px;color:#5D5D5D;">
+    <b style="color:#131313;">Capacity runway (days):</b> {runway_line}
+  </td></tr>
+  <tr><td style="padding:2px 20px 4px;font-family:Arial,sans-serif;\
 font-size:12px;color:#5D5D5D;">
     <b style="color:#131313;">VM Efficiency:</b> {eff_line}
   </td></tr>
@@ -596,6 +803,11 @@ sans-serif;font-size:11px;color:#6B7480;">
         vms=summary.vm_total,
         kpi_cells=kpi_cells,
         capacity_html=capacity_html,
+        runway_line="CPU {c} · Memory {m} · Storage {s}".format(
+            c=_runway_display(summary.cpu_runway_days),
+            m=_runway_display(summary.mem_runway_days),
+            s=_runway_display(summary.storage_runway_days),
+        ),
         eff_line=eff_line,
         report_name=report_name,
         csv_name=csv_name,
@@ -640,7 +852,13 @@ def _render_body_text(summary, meta, alerts_value, runway_value,
     lines.append("Clusters healthy: {}/{}".format(
         summary.clusters_healthy, summary.cluster_count))
     lines.append("Critical alerts (24h): {}".format(alerts_value))
-    lines.append("Storage runway (worst cluster): {}".format(runway_value))
+    lines.append("Underutilized VMs: {}".format(summary.underutilized_count))
+    lines.append("Capacity runway (days) - CPU {c} · Memory {m} · Storage {s}"
+                 .format(
+                     c=_runway_display(summary.cpu_runway_days),
+                     m=_runway_display(summary.mem_runway_days),
+                     s=_runway_display(summary.storage_runway_days),
+                 ))
     lines.append("")
     lines.append("Capacity vs. Consumed (all clusters):")
     for (label, used, total, pct) in capacity_rows:

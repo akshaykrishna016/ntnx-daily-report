@@ -28,6 +28,7 @@ CSV_HEADER = [
     "Storage Free",
     "Disks",
     "Efficiency",
+    "Underutilized",
 ]
 
 # Em dash used consistently for "no data" cells.
@@ -75,6 +76,7 @@ def vm_to_csv_row(vm):
         guest_free,
         str(vm.disk_count),
         vm.efficiency_status if vm.efficiency_status else EM_DASH,
+        getattr(vm, "underutilized_reason", "") or "",
     ]
 
 

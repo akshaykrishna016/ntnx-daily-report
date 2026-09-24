@@ -97,6 +97,9 @@ class VM:
     power_state: str
     efficiency_status: Optional[str] = None
     stats_ok: bool = True
+    # Set by the renderer (feature 1): why the VM is flagged underutilized, or
+    # "" when it is not flagged.
+    underutilized_reason: str = ""
 
 
 @dataclass
@@ -128,6 +131,12 @@ class Summary:
     # Optional KPI values (may be None when their call failed / degraded).
     critical_alert_count: Optional[int] = None
     storage_runway_days: Optional[int] = None
+    # Per-resource capacity runway (days remaining); None when unavailable.
+    cpu_runway_days: Optional[int] = None
+    mem_runway_days: Optional[int] = None
+
+    # Count of underutilized VMs (feature 1); computed in the renderer.
+    underutilized_count: int = 0
 
     # Count of VMs whose stats could not be fully collected (footer note).
     vm_stats_failures: int = 0

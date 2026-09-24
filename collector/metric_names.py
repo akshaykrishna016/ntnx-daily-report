@@ -88,6 +88,15 @@ EFFICIENCY_ENTITY_TYPE = "mh_vm"
 EFFICIENCY_ATTR_VM_NAME = "vm_name"
 EFFICIENCY_ATTR_STATUS = "capacity.vm_efficiency_status"
 
-# ---- v3 groups API attribute for storage runway -----------------------------
+# ---- v3 groups API attributes for capacity runway (days remaining) ----------
+# Prism computes a per-resource runway. The exact attribute names vary by PC
+# version; these are queried in SEPARATE groups calls so one unknown attribute
+# cannot fail the others (the groups API rejects a whole call if any attribute
+# is invalid). Each resource degrades to "N/A" independently. Confirm/adjust
+# these names against the live PC during validation.
 RUNWAY_ENTITY_TYPE = "cluster"
-RUNWAY_ATTR = "capacity.runway"
+# Confirmed valid + populated on the live Siemens PC (verify_runway.ps1).
+RUNWAY_ATTR = "capacity.runway"                     # overall (back-compat)
+RUNWAY_ATTR_STORAGE = "capacity.storage_runway"
+RUNWAY_ATTR_CPU = "capacity.cpu_runway"
+RUNWAY_ATTR_MEMORY = "capacity.memory_runway"

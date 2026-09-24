@@ -31,6 +31,9 @@ report:
   thresholds:
     amber: 70               # >= amber and <= red -> amber; < amber -> green
     red: 85                 # > red -> red
+  underutilized:           # feature 1: a powered-on VM is "underutilized" when
+    cpu_pct: 15            #   its avg CPU% is below this AND
+    mem_pct: 30            #   its avg memory% is below this (or X-FIT flags it)
   exclude_vm_patterns:
     - "NTNX-*-CVM"
 

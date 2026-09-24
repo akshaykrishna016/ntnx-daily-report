@@ -24,6 +24,8 @@ def build_summary(
     critical_alert_count,
     storage_runway_days,
     vm_stats_failures,
+    cpu_runway_days=None,
+    mem_runway_days=None,
 ):
     """Construct a ``Summary`` from the collected entities and KPI values.
 
@@ -93,6 +95,8 @@ def build_summary(
         efficiency_available=eff_available,
         critical_alert_count=critical_alert_count,
         storage_runway_days=storage_runway_days,
+        cpu_runway_days=cpu_runway_days,
+        mem_runway_days=mem_runway_days,
         vm_stats_failures=vm_stats_failures,
     )
     LOG.info(
@@ -111,3 +115,51 @@ def _safe_pct(used, total):
     if not total:
         return 0.0
     return float(used) / float(total) * 100.0
+
+
+# Efficiency labels that, on their own, mark a VM as having reclaimable/idle
+# resources (feature 1: underutilized VMs).
+_UNDERUTILIZED_EFFICIENCY = ("Overprovisioned", "Inactive")
+
+
+def classify_underutilized(vm, cpu_threshold, mem_threshold):
+    """Decide whether a VM is underutilized, and why (feature 1).
+
+    A powered-on VM is flagged when EITHER signal applies:
+      * Prism X-FIT tags it ``Overprovisioned`` or ``Inactive``; or
+      * its average CPU% and average memory% are both below the thresholds
+        (a "Low usage" signal that works even before X-FIT has a baseline).
+
+    Args:
+        vm: A ``collector.model.VM``.
+        cpu_threshold: Average CPU% below which the VM counts as low-usage.
+        mem_threshold: Average memory% below which the VM counts as low-usage.
+
+    Returns:
+        A tuple ``(is_underutilized, reason)``. ``reason`` is a short,
+        comma-separated string (e.g. ``"Overprovisioned, Low usage"``); empty
+        when the VM is not flagged.
+    """
+    if str(vm.power_state).upper() != "ON":
+        return False, ""
+
+    reasons = []
+
+    # X-FIT signal (vm.efficiency_status may be comma-joined).
+    if vm.efficiency_status:
+        for label in [part.strip() for part in vm.efficiency_status.split(",")]:
+            if label in _UNDERUTILIZED_EFFICIENCY and label not in reasons:
+                reasons.append(label)
+
+    # Threshold signal (only meaningful when stats were collected).
+    if vm.stats_ok:
+        if vm.mem_capacity_gib:
+            mem_pct = vm.mem_avg_gib / vm.mem_capacity_gib * 100.0
+        else:
+            mem_pct = 0.0
+        if vm.cpu_avg_pct < cpu_threshold and mem_pct < mem_threshold:
+            reasons.append("Low usage")
+
+    if reasons:
+        return True, ", ".join(reasons)
+    return False, ""

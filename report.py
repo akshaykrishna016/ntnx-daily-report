@@ -35,6 +35,7 @@ import yaml
 import interactive
 from collector import clusters as clusters_mod
 from collector import efficiency as efficiency_mod
+from collector import metric_names
 from collector import hosts as hosts_mod
 from collector import summarize
 from collector import vms as vms_mod
@@ -306,7 +307,17 @@ def collect_all(client, config, window):
 
     # --- Optional KPI values (soft) ------------------------------------------
     critical_alerts = efficiency_mod.collect_critical_alert_count(client)
-    runway_days = efficiency_mod.collect_storage_runway_days(client)
+    # Per-resource capacity runway (each its own call so one bad attribute name
+    # can't fail the others); any resource degrades to N/A independently.
+    storage_runway = efficiency_mod.collect_runway_days(
+        client, metric_names.RUNWAY_ATTR_STORAGE
+    )
+    cpu_runway = efficiency_mod.collect_runway_days(
+        client, metric_names.RUNWAY_ATTR_CPU
+    )
+    mem_runway = efficiency_mod.collect_runway_days(
+        client, metric_names.RUNWAY_ATTR_MEMORY
+    )
 
     # --- Summary roll-up -----------------------------------------------------
     summary = summarize.build_summary(
@@ -316,8 +327,10 @@ def collect_all(client, config, window):
         eff_map,
         eff_available,
         critical_alerts,
-        runway_days,
+        storage_runway,
         vm_failures,
+        cpu_runway_days=cpu_runway,
+        mem_runway_days=mem_runway,
     )
     return cluster_records, all_hosts, vm_records, summary
 
@@ -350,9 +363,8 @@ def render_all(clusters, hosts, vms, summary, config, meta):
         if logos[name] is None:
             LOG.info("Logo '%s' not found; omitting its <img> cleanly", name)
 
-    charts = html_mod.build_charts(summary, vms, config)
     context = html_mod.build_report_context(
-        summary, clusters, hosts, vms, charts, logos, config, meta
+        summary, clusters, hosts, vms, logos, config, meta
     )
     template_dir = os.path.join(RESOURCE_DIR, "render", "templates")
     report_html = html_mod.render_report(context, template_dir)
